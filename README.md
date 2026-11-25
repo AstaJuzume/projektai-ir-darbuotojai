@@ -4,10 +4,10 @@ Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apska
 
 ## Procesas
 
-- Vadovas vakare pasirenka objektą, darbuotojus, intervalą, komandą ir automobilį. Žmogus gali dirbti keliuose objektuose tą pačią dieną. Sutampantys intervalai blokuojami.
+- Vadovas atidaro bendrą komandos dienos žiniaraštį. Kiekvienoje darbuotojo eilutėje pažymi „Dirbo“, „Pravaikšta“ arba pateisintą neatvykimą su priežastimi. Darbo intervalai ir atlikto darbo valandos įvedami kiekvienam atskirai; bendrą laiką galima pritaikyti visiems dirbantiems. Žmogus gali dirbti keliuose objektuose tą pačią dieną. Sutampantys intervalai blokuojami.
 - 30 min. pietų intervalas paskirstomas pagal darbo intervalų persidengimą. Visuose to žmogaus dienos įrašuose pietų pradžia turi sutapti. Demo numatyta 12:00, dienos įvedime ją galima keisti.
 - Faktinis laikas visada matomas. Vadovo siūlomos valandos ir skirtumas pateikiami atskirai su komentaru. Nepateisinto neatvykimo atveju skaičiuojamas kitų komandos darbuotojų dienos vidurkis, sujungiant jų objektus. Tai siūlymas administracinei peržiūrai, automatinės darbo užmokesčio išskaitos neskaičiuojamos.
-- Išsaugotą įrašą taiso tik du įgalioti administratoriai su priežastimi ir prieš/po istorija. Vadovas pateikia taisymo prašymą.
+- Vadovas gali išsaugoti dienos juodraštį ir grįžti dienos gale. Pateiktą dieną taiso tik du įgalioti administratoriai su priežastimi ir prieš/po istorija. Vadovas pateikia taisymo prašymą.
 - Administracija mato visus įrašus, komandos atstovas – savo įvestus. Darbuotojo ataskaitą atidaro administracija; darbuotojui paskyros nereikia.
 - Objekto suvestinė apima montavimo, užbaigimo ir elektrikų komandų valandas. Būsto išlaidas mato tik administracija.
 
@@ -26,3 +26,5 @@ Atidarykite HTTPS adresą ir pasirinkite „Įdiegti programėlę“. Edge / Chr
 PWA naudoja santykinius kelius, turi savo piktogramą ir atskirą langą. Paleidimui reikia interneto. Service worker nekaupia autentifikuotų puslapių ar darbuotojų duomenų.
 
 Skaičiavimai atskirti `work-rules.js`: faktinis intervalas, pietūs, komandos dienos vidurkis, siūlymas ir persidengimų kontrolė. Reikalavimų apimtis ir atviri klausimai – `REIKALAVIMAI.md`.
+
+Dienos rezultato pavyzdys: intervalas 07:00–18:30 ir 30 min. pietūs = 11 dirbtų valandų; vadovas darbuotojui įrašo 8 atlikto darbo valandas ir skirtumo komentarą. Tikrasis intervalas ir 11 val. nesikeičia.

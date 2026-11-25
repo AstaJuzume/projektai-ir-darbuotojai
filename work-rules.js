@@ -28,9 +28,25 @@
     return { actual, value: round(value), delta: round(value-actual), reference: null };
   }
   function conflicts(records, candidate, ignoreId) {
-    return records.filter(row => row.id !== ignoreId && row.employee === candidate.employee && row.date === candidate.date && (
+    return records.filter(row => (ignoreId == null || row.id !== ignoreId) && row.employee === candidate.employee && row.date === candidate.date && (
       row.attendance !== 'Dirbo' || candidate.attendance !== 'Dirbo' || (candidate.start < row.end && candidate.end > row.start)
     ));
   }
-  root.WorkRules = { round, minutes, calculate, teamAverage, proposal, conflicts };
+  function validateBatch(records, candidates, requireComments = true) {
+    const replaced = new Set(candidates.filter(r=>r.id != null).map(r=>r.id));
+    const remaining = records.filter(r=>!replaced.has(r.id));
+    const all = [...remaining, ...candidates];
+    for (const row of candidates) {
+      const c = calculate(row);
+      if (row.proposedHours !== null && row.proposedHours !== undefined && row.proposedHours !== '' && (!Number.isFinite(Number(row.proposedHours)) || Number(row.proposedHours) < 0 || Number(row.proposedHours) > 24)) throw Error(`Darbuotojas #${row.employee}: atlikto darbo valandos turi būti nuo 0 iki 24.`);
+      if (requireComments && row.attendance === 'Pateisintas neatvykimas' && !row.absenceReason) throw Error(`Darbuotojas #${row.employee}: pasirinkite pateisinto neatvykimo priežastį.`);
+      if (requireComments && row.attendance === 'Dirbo' && row.proposedHours != null && Number(row.proposedHours) !== c.actual && !(row.comment||'').trim()) throw Error(`Darbuotojas #${row.employee}: paaiškinkite dirbtų ir atlikto darbo valandų skirtumą.`);
+      const others = all.filter(r=>r !== row);
+      if (conflicts(others,row).length) throw Error(`Darbuotojas #${row.employee}: sutampa darbo intervalai arba šiai dienai jau pažymėtas neatvykimas.`);
+      if (row.attendance === 'Dirbo' && others.some(r=>r.employee===row.employee&&r.date===row.date&&r.attendance==='Dirbo'&&r.lunchStart!==row.lunchStart)) throw Error(`Darbuotojas #${row.employee}: visuose dienos įrašuose pietų pradžia turi sutapti.`);
+      if (row.attendance === 'Dirbo' && row.vehicle && others.some(r=>r.vehicle===row.vehicle&&r.team!==row.team&&r.date===row.date&&r.attendance==='Dirbo'&&row.start<r.end&&row.end>r.start)) throw Error('Automobilis tuo pačiu laiku priskirtas kitai komandai.');
+    }
+    return candidates;
+  }
+  root.WorkRules = { round, minutes, calculate, teamAverage, proposal, conflicts, validateBatch };
 })(globalThis);

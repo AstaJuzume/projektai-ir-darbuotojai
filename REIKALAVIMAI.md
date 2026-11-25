@@ -10,7 +10,7 @@ Individualiai programuojama sistema pakeičia Excel ir nuotraukomis siunčiamas 
 - Vadovas mato tik savo įvestas valandas; administracija mato visas.
 - Automatinė 30 min. pietų pertrauka. Faktas lieka matomas atskirai nuo vadovo siūlomos korekcijos ir komentaro.
 - Neatvykimo priežastis ir 0 faktinių valandų. Nepateisinto neatvykimo atveju atskiras dienos vidurkiu pagrįstas siūlymas peržiūrai.
-- Įrašų taisymas dviem įgaliotiems asmenims, su prieš/po istorija. Vadovas teikia taisymo prašymą.
+- Komandos dienos žiniaraštyje dalyvavimas ir rezultatas įvedami kiekvienam darbuotojui atskirai. Galimas dienos juodraštis ir jo tęsimas vakare. Pateiktų įrašų taisymas dviem įgaliotiems asmenims, su prieš/po istorija. Vadovas teikia taisymo prašymą.
 - Darbuotojo ataskaita administracijai: dienos, objektai, faktas, siūlymas, skirtumas, komentaras.
 - 27 automobiliai, priskyrimai komandoms, TA terminai ir priminimai atsakingam asmeniui.
 - Savaitės ir mėnesio suvestinės, eksportas buhalterijai. Objekto suvestinė pagal pavadinimą apima ir užbaigimo bei elektrikų komandų valandas.
