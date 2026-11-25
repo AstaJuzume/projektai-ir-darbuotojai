@@ -11,6 +11,15 @@ Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apska
 - Administracija mato visus įrašus, komandos atstovas – savo įvestus. Darbuotojo ataskaitą atidaro administracija; darbuotojui paskyros nereikia.
 - Objekto suvestinė apima montavimo, užbaigimo ir elektrikų komandų valandas. Būsto išlaidas įvesti, keisti ir matyti gali tik įmonės vadovas. Kiti administratoriai ir darbų vadovai nemato išlaidų skilties, sumų objektuose, suvestinėse ar finansinių įrašų istorijoje.
 
+## Dienos pildymo patobulinimai
+
+- „Perkelti darbuotojus“ padalija pasirinktų darbuotojų juodraščio intervalą nuo nurodyto laiko į kitą objektą. Galima parinkti priimantį darbų vadovą ir automobilį. Dienos faktinių bei įvertintų valandų suma ir vienkartinė pietų pertrauka išlieka; persidengimai blokuojami.
+- „Dienos suvestinė“ sujungia žmogaus dienos objektus. Administracija mato visus įrašus, darbų vadovas – savo. Darbuotojo ataskaitoje išskleidžiami dienos intervalai ir objektai.
+- Atlikto darbo valandos ir pravaikštos korekcija rodomos atskirai lentelėse, suvestinėse ir CSV. Neatvykusio žmogaus faktas ir atliktas darbas yra 0; neigiamas siūlymas lieka atskirame lauke.
+- „Dienos kontrolė“ administracijai atskiria nepažymėtus darbuotojus, pateisintus bei nepateisintus neatvykimus, juodraščius ir pateiktas komandas.
+- „Kopijuoti ankstesnę komandą“ paima paskutinės ankstesnės darbo dienos dirbusių žmonių sąrašą, objektą ir automobilį. Nekopijuoja neatvykimų, komentarų ar rezultato įvertinimų. Naujiems darbuotojų įrašams būtina pažymėti dalyvavimą.
+- Telefone dienos žiniaraštis virsta atskiromis darbuotojų kortelėmis su dideliais dalyvavimo mygtukais, laiko ir atlikto darbo laukais.
+
 ## Demo sudėtis
 
 70 darbuotojų, 10 montavimo, 3 užbaigimo ir 2 elektrikų komandos; Įmonės vadovo, 2 administratorių ir 15 komandų atstovų modelis (18 paskyrų, rezervas iki 20). Darbuotojų sąrašą galima didinti iki 120 ir daugiau. 27 automobiliai su TA datomis ir priminimų nustatymais.
