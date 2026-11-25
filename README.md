@@ -9,11 +9,11 @@ Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apska
 - Faktinis laikas visada matomas. Vadovo siūlomos valandos ir skirtumas pateikiami atskirai su komentaru. Nepateisinto neatvykimo atveju skaičiuojamas kitų komandos darbuotojų dienos vidurkis, sujungiant jų objektus. Tai siūlymas administracinei peržiūrai, automatinės darbo užmokesčio išskaitos neskaičiuojamos.
 - Vadovas gali išsaugoti dienos juodraštį ir grįžti dienos gale. Pateiktą dieną taiso tik du įgalioti administratoriai su priežastimi ir prieš/po istorija. Vadovas pateikia taisymo prašymą.
 - Administracija mato visus įrašus, komandos atstovas – savo įvestus. Darbuotojo ataskaitą atidaro administracija; darbuotojui paskyros nereikia.
-- Objekto suvestinė apima montavimo, užbaigimo ir elektrikų komandų valandas. Būsto išlaidas mato tik administracija.
+- Objekto suvestinė apima montavimo, užbaigimo ir elektrikų komandų valandas. Būsto išlaidas įvesti, keisti ir matyti gali tik įmonės vadovas. Kiti administratoriai ir darbų vadovai nemato išlaidų skilties, sumų objektuose, suvestinėse ar finansinių įrašų istorijoje.
 
 ## Demo sudėtis
 
-70 darbuotojų, 10 montavimo, 3 užbaigimo ir 2 elektrikų komandos; 3 administratorių ir 15 komandų atstovų modelis (18 paskyrų, rezervas iki 20). Darbuotojų sąrašą galima didinti iki 120 ir daugiau. 27 automobiliai su TA datomis ir priminimų nustatymais.
+70 darbuotojų, 10 montavimo, 3 užbaigimo ir 2 elektrikų komandos; Įmonės vadovo, 2 administratorių ir 15 komandų atstovų modelis (18 paskyrų, rezervas iki 20). Darbuotojų sąrašą galima didinti iki 120 ir daugiau. 27 automobiliai su TA datomis ir priminimų nustatymais.
 
 Tai vietinis naršyklės prototipas: backend, tikras prisijungimas, bendras duomenų šaltinis ir automatinių el. laiškų siuntimas neprijungti. Vaidmenys imituojami. localStorage įrašai nesinchronizuojami tarp įrenginių ar naudotojų. Finansinės korekcijos nėra darbo užmokesčio skaičiavimo mechanizmas.
 

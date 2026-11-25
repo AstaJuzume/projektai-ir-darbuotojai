@@ -14,7 +14,7 @@ Individualiai programuojama sistema pakeičia Excel ir nuotraukomis siunčiamas 
 - Darbuotojo ataskaita administracijai: dienos, objektai, faktas, siūlymas, skirtumas, komentaras.
 - 27 automobiliai, priskyrimai komandoms, TA terminai ir priminimai atsakingam asmeniui.
 - Savaitės ir mėnesio suvestinės, eksportas buhalterijai. Objekto suvestinė pagal pavadinimą apima ir užbaigimo bei elektrikų komandų valandas.
-- Būsto išlaidos prie objekto, prieiga tik administratoriui / atskirai įgaliotam asmeniui.
+- Būsto išlaidos prie objekto: įvesti, keisti ir matyti gali tik įmonės vadovas. Kitoms rolėms išlaidų duomenys ir jų pakeitimų istorija nerodomi.
 
 ## Neįtraukiama
 
