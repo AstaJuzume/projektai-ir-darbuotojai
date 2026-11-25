@@ -20,3 +20,14 @@ Pritaikyta saulės elektrinių montavimo veiklai Vokietijoje, pagal viešai skel
 `index.html`, `style.css`, `app.js` – statinė aplikacija be išorinių priklausomybių. Paleidžiama per bet kurį statinių failų serverį.
 
 Lokaliai: `python -m http.server 8000`, tada atidarykite `http://localhost:8000`. GitHub Pages naudokite `main` šaką ir šakninį katalogą `/ (root)`.
+
+
+## Įdiegimas kaip programėlės (PWA)
+
+Aplikacijoje paspauskite „Įdiegti programėlę“. Edge ir Chrome gali parodyti naršyklės įdiegimo dialogą. Jei jis dar nepasiekiamas, mygtukas pateikia instrukcijas. Android sistemoje taip pat naudokite naršyklės meniu „Įdiegti programėlę“ / „Pridėti prie pagrindinio ekrano“. iPhone / iPad Safari: bendrinimo meniu → „Pridėti prie pradžios ekrano“.
+
+Naudokite HTTPS adresą (GitHub Pages arba demo nuorodą), lokaliam kūrimui tinka localhost. Manifestas ir service worker naudoja santykinius kelius, todėl veikia ir GitHub Pages saugyklos pakatalogyje.
+
+Programėlė atsidaro atskirame lange ir turi savo piktogramą. Jai paleisti reikia interneto; be ryšio rodomas aiškus pranešimas. Service worker nekaupia autentifikuotų puslapių ar valandų įrašų ir nekeičia prisijungimo kontrolės. Demo įrašai išlieka naršyklės localStorage ir nesinchronizuojami tarp įrenginių.
+
+PWA failai: `manifest.webmanifest`, `pwa.js`, `pwa.css`, `sw.js`, `offline.html`, `icons/`.

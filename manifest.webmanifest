@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "Projektai ir darbuotojai",
+  "short_name": "Projektai",
+  "description": "Saulės elektrinių montavimo projektų, brigadų ir darbo valandų valdymas.",
+  "lang": "lt",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#663c8f",
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
