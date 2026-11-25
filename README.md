@@ -8,13 +8,13 @@ Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apska
 - 30 min. pietų intervalas paskirstomas pagal darbo intervalų persidengimą. Visuose to žmogaus dienos įrašuose pietų pradžia turi sutapti. Demo numatyta 12:00, dienos įvedime ją galima keisti.
 - Faktinis laikas visada matomas. Vadovo siūlomos valandos ir skirtumas pateikiami atskirai su komentaru. Nepateisinto neatvykimo atveju skaičiuojamas kitų komandos darbuotojų dienos vidurkis, sujungiant jų objektus. Tai siūlymas administracinei peržiūrai, automatinės darbo užmokesčio išskaitos neskaičiuojamos.
 - Vadovas gali išsaugoti dienos juodraštį ir grįžti dienos gale. Pateiktą dieną taiso tik du įgalioti administratoriai su priežastimi ir prieš/po istorija. Vadovas pateikia taisymo prašymą.
-- Administracija mato visus įrašus, komandos atstovas – savo įvestus. Darbuotojo ataskaitą atidaro administracija; darbuotojui paskyros nereikia.
+- Administracija mato visus įrašus, komandos atstovas – savo komandos įrašus jam priskirtuose objektuose. Darbuotojo ataskaitą atidaro administracija; darbuotojui paskyros nereikia.
 - Objekto suvestinė apima montavimo, užbaigimo ir elektrikų komandų valandas. Būsto išlaidas įvesti, keisti ir matyti gali tik įmonės vadovas. Kiti administratoriai ir darbų vadovai nemato išlaidų skilties, sumų objektuose, suvestinėse ar finansinių įrašų istorijoje.
 
 ## Dienos pildymo patobulinimai
 
 - „Perkelti darbuotojus“ padalija pasirinktų darbuotojų juodraščio intervalą nuo nurodyto laiko į kitą objektą. Galima parinkti priimantį darbų vadovą ir automobilį. Dienos faktinių bei įvertintų valandų suma ir vienkartinė pietų pertrauka išlieka; persidengimai blokuojami.
-- „Dienos suvestinė“ sujungia žmogaus dienos objektus. Administracija mato visus įrašus, darbų vadovas – savo. Darbuotojo ataskaitoje išskleidžiami dienos intervalai ir objektai.
+- „Dienos suvestinė“ sujungia žmogaus dienos objektus. Administracija mato visus įrašus, darbų vadovas – savo komandos valandas priskirtuose objektuose. Darbuotojo ataskaitoje išskleidžiami dienos intervalai ir objektai.
 - Atlikto darbo valandos ir pravaikštos korekcija rodomos atskirai lentelėse, suvestinėse ir CSV. Neatvykusio žmogaus faktas ir atliktas darbas yra 0; neigiamas siūlymas lieka atskirame lauke.
 - „Dienos kontrolė“ administracijai atskiria nepažymėtus darbuotojus, pateisintus bei nepateisintus neatvykimus, juodraščius ir pateiktas komandas.
 - „Kopijuoti ankstesnę komandą“ paima paskutinės ankstesnės darbo dienos dirbusių žmonių sąrašą, objektą ir automobilį. Nekopijuoja neatvykimų, komentarų ar rezultato įvertinimų. Naujiems darbuotojų įrašams būtina pažymėti dalyvavimą.

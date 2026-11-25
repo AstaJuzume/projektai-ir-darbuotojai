@@ -7,19 +7,19 @@ Individualiai programuojama sistema pakeičia Excel ir nuotraukomis siunčiamas 
 - Dabar apie 70 darbuotojų, augimas dar apie 50. Jie patys prie sistemos nesijungia.
 - 10 darbų vadovų, 3 užbaigimo komandų ir 2 elektrikų komandų atstovai, 3 administratoriai: apie 18 paskyrų, vertinimui planuoti iki 20.
 - Vadovas pasirenka objektą, žmones, intervalą ir automobilį. Tas pats darbuotojas per dieną gali dirbti keliuose objektuose be sutampančių intervalų. Tą patį objektą pildo keli vadovai.
-- Vadovas mato tik savo įvestas valandas; administracija mato visas.
+- Vadovas mato tik savo komandos valandas jam priskirtuose objektuose; administracija mato visas.
 - Automatinė 30 min. pietų pertrauka. Faktas lieka matomas atskirai nuo vadovo siūlomos korekcijos ir komentaro.
 - Neatvykimo priežastis ir 0 faktinių valandų. Nepateisinto neatvykimo atveju atskiras dienos vidurkiu pagrįstas siūlymas peržiūrai.
 - Komandos dienos žiniaraštyje dalyvavimas ir rezultatas įvedami kiekvienam darbuotojui atskirai. Galimas dienos juodraštis ir jo tęsimas vakare. Pateiktų įrašų taisymas dviem įgaliotiems asmenims, su prieš/po istorija. Vadovas teikia taisymo prašymą.
 - Darbuotojo ataskaita administracijai: dienos, objektai, faktas, siūlymas, skirtumas, komentaras.
 - 27 automobiliai, priskyrimai komandoms, TA terminai ir priminimai atsakingam asmeniui.
 - Savaitės ir mėnesio suvestinės, eksportas buhalterijai. Objekto suvestinė pagal pavadinimą apima ir užbaigimo bei elektrikų komandų valandas.
-- Būsto išlaidos prie objekto: įvesti, keisti ir matyti gali tik įmonės vadovas. Kitoms rolėms išlaidų duomenys ir jų pakeitimų istorija nerodomi.
+- Būsto ir kitos išlaidos prie objekto: įvesti, keisti ir matyti gali tik įmonės vadovas. Kitoms rolėms išlaidų duomenys ir jų pakeitimų istorija nerodomi.
 
 ## Įgyvendinti dienos darbo patogumai
 
 1. Kelių pažymėtų darbuotojų perkėlimas nuo pasirinkto laiko į kitą objektą ir, prireikus, kitam darbų vadovui. Perkeliami tik leistini juodraščiai; intervalai padalijami, pietūs ir dienos sumos nedubliuojami.
-2. Bendra darbuotojo diena su kelių objektų intervalais, faktinėmis ir atlikto darbo valandomis. Darbų vadovui galioja savo įrašų matomumo riba.
+2. Bendra darbuotojo diena su kelių objektų intervalais, faktinėmis ir atlikto darbo valandomis. Darbų vadovui galioja priskirtų objektų ir savo komandos įrašų matomumo riba.
 3. Pravaikštos neigiamas siūlymas atskirtas nuo atlikto darbo įvertinimo, taip pat eksporte. Faktinės valandos dėl siūlymo nesikeičia.
 4. Administracijos dienos užpildymo kontrolė: nepažymėti žmonės, neatvykimų rūšys, juodraščiai ir pateiktos komandos.
 5. Ankstesnės dirbusios komandos kopijavimas, neperkeliant jos neatvykimų, komentarų ir įvertinimų; naujas dalyvavimas pažymimas iš naujo.
@@ -36,6 +36,6 @@ Darbų etapai, procentinė pažanga, kiekiai, GPS, kilometrai ir kelionės laiko
 3. Pietų pradžia, trumpa diena, intervalai per vidurnaktį.
 4. Du valandų taisymui įgalioti asmenys ir trečio administratoriaus teisės.
 5. Buhalterijos eksporto pavyzdys ir laiškų siuntimo paskyra.
-6. Būsto išlaidų dokumentai ir paskirstymas keliems objektams.
+6. Būsto ir kitų išlaidų dokumentai ir paskirstymas keliems objektams.
 
 Pageidaujama pradžia – apie 2027-01-10; terminas tikslinamas pagal galutinę apimtį.
