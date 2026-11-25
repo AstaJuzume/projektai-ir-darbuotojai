@@ -1,33 +1,28 @@
-# Montavimo darbų valdymo prototipas
+# Projektai ir darbuotojai
 
-Power Apps stiliaus internetinis prototipas projektų, brigadų ir darbo laiko valdymui. Tikra Power Apps aplikacija ir Microsoft duomenų šaltiniai neprijungti.
+Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apskaitos sistemos PWA prototipas. Vardai, įrašai ir automobiliai demonstraciniai.
 
-## Išbandymas
+## Procesas
 
-1. Projektų vadovo vaidmeniu peržiūrėti projektų etapus ir brigadų planą.
-2. Registruoti lapkričio 26 d. laiką pasirinktiems darbuotojams. Pateikti įrašus tvirtinti.
-3. Tvirtinime patvirtinti arba grąžinti įrašą su priežastimi. Peržiūrėti atsinaujinusias suvestines.
-4. Pakeisti vaidmenį į brigadininką arba darbuotoją ir išbandyti atitinkamą ekraną.
+- Vadovas vakare pasirenka objektą, darbuotojus, intervalą, komandą ir automobilį. Žmogus gali dirbti keliuose objektuose tą pačią dieną. Sutampantys intervalai blokuojami.
+- 30 min. pietų intervalas paskirstomas pagal darbo intervalų persidengimą. Visuose to žmogaus dienos įrašuose pietų pradžia turi sutapti. Demo numatyta 12:00, dienos įvedime ją galima keisti.
+- Faktinis laikas visada matomas. Vadovo siūlomos valandos ir skirtumas pateikiami atskirai su komentaru. Nepateisinto neatvykimo atveju skaičiuojamas kitų komandos darbuotojų dienos vidurkis, sujungiant jų objektus. Tai siūlymas administracinei peržiūrai, automatinės darbo užmokesčio išskaitos neskaičiuojamos.
+- Išsaugotą įrašą taiso tik du įgalioti administratoriai su priežastimi ir prieš/po istorija. Vadovas pateikia taisymo prašymą.
+- Administracija mato visus įrašus, komandos atstovas – savo įvestus. Darbuotojo ataskaitą atidaro administracija; darbuotojui paskyros nereikia.
+- Objekto suvestinė apima montavimo, užbaigimo ir elektrikų komandų valandas. Būsto išlaidas mato tik administracija.
 
-Duomenys išsaugomi tik naršyklės localStorage. Tai nėra bendras duomenų šaltinis ar tikra prieigos kontrolė. Demonstraciniai darbuotojai ir projektai išgalvoti. Atlikti kiekiai nepriklauso nuo darbuotojų valandų skaičiaus. Darbo laiko persidengimai ir brigados priskyrimų persidengimai tikrinami.
+## Demo sudėtis
 
-## Veiklos kontekstas
+70 darbuotojų, 10 montavimo, 3 užbaigimo ir 2 elektrikų komandos; 3 administratorių ir 15 komandų atstovų modelis (18 paskyrų, rezervas iki 20). Darbuotojų sąrašą galima didinti iki 120 ir daugiau. 27 automobiliai su TA datomis ir priminimų nustatymais.
 
-Pritaikyta saulės elektrinių montavimo veiklai Vokietijoje, pagal viešai skelbiamus darbų etapus: aikštelės paruošimas, tranšėjos, konstrukcijos, moduliai, elektros darbai ir aikštelės tvarkymas. Šaltiniai: https://pvmount.lt/ ir https://pvmount.lt/atliekami-darba/ (peržiūrėta 2026-11-25).
+Tai vietinis naršyklės prototipas: backend, tikras prisijungimas, bendras duomenų šaltinis ir automatinių el. laiškų siuntimas neprijungti. Vaidmenys imituojami. localStorage įrašai nesinchronizuojami tarp įrenginių ar naudotojų. Finansinės korekcijos nėra darbo užmokesčio skaičiavimo mechanizmas.
 
-## Failai
+## Paleidimas ir PWA
 
-`index.html`, `style.css`, `app.js` – statinė aplikacija be išorinių priklausomybių. Paleidžiama per bet kurį statinių failų serverį.
+GitHub kopijoje failai yra šakniniame kataloge. `python -m http.server 8000`, tada `http://localhost:8000`. GitHub Pages: `main`, `/ (root)`. Sites šaltinyje statiniai failai yra `dist/`.
 
-Lokaliai: `python -m http.server 8000`, tada atidarykite `http://localhost:8000`. GitHub Pages naudokite `main` šaką ir šakninį katalogą `/ (root)`.
+Atidarykite HTTPS adresą ir pasirinkite „Įdiegti programėlę“. Edge / Chrome gali atverti diegimo dialogą, kitu atveju rodomos instrukcijos. Safari iPhone / iPad: bendrinimo meniu → „Pridėti prie pradžios ekrano“.
 
+PWA naudoja santykinius kelius, turi savo piktogramą ir atskirą langą. Paleidimui reikia interneto. Service worker nekaupia autentifikuotų puslapių ar darbuotojų duomenų.
 
-## Įdiegimas kaip programėlės (PWA)
-
-Aplikacijoje paspauskite „Įdiegti programėlę“. Edge ir Chrome gali parodyti naršyklės įdiegimo dialogą. Jei jis dar nepasiekiamas, mygtukas pateikia instrukcijas. Android sistemoje taip pat naudokite naršyklės meniu „Įdiegti programėlę“ / „Pridėti prie pagrindinio ekrano“. iPhone / iPad Safari: bendrinimo meniu → „Pridėti prie pradžios ekrano“.
-
-Naudokite HTTPS adresą (GitHub Pages arba demo nuorodą), lokaliam kūrimui tinka localhost. Manifestas ir service worker naudoja santykinius kelius, todėl veikia ir GitHub Pages saugyklos pakatalogyje.
-
-Programėlė atsidaro atskirame lange ir turi savo piktogramą. Jai paleisti reikia interneto; be ryšio rodomas aiškus pranešimas. Service worker nekaupia autentifikuotų puslapių ar valandų įrašų ir nekeičia prisijungimo kontrolės. Demo įrašai išlieka naršyklės localStorage ir nesinchronizuojami tarp įrenginių.
-
-PWA failai: `manifest.webmanifest`, `pwa.js`, `pwa.css`, `sw.js`, `offline.html`, `icons/`.
+Skaičiavimai atskirti `work-rules.js`: faktinis intervalas, pietūs, komandos dienos vidurkis, siūlymas ir persidengimų kontrolė. Reikalavimų apimtis ir atviri klausimai – `REIKALAVIMAI.md`.

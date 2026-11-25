@@ -1,0 +1,20 @@
+const {readFileSync,existsSync}=require('node:fs');
+const vm=require('node:vm');
+const assert=require('node:assert/strict');
+const context={};vm.createContext(context);vm.runInContext(readFileSync(existsSync('dist/work-rules.js')?'dist/work-rules.js':'work-rules.js','utf8'),context);const R=context.WorkRules;
+const row=(employee,start,end,overrides={})=>({id:employee,employee,date:'2026-11-25',team:1,attendance:'Dirbo',start,end,lunchStart:'12:00',proposedHours:null,...overrides});
+assert.equal(R.calculate(row(1,'06:00','18:00')).actual,11.5);
+const split=[row(1,'06:00','12:00'),row(1,'12:00','18:00',{id:10})];assert.equal(split.reduce((s,r)=>s+R.calculate(r).actual,0),11.5);assert.equal(split.reduce((s,r)=>s+R.calculate(r).lunch,0),30);
+const missing=row(3,'','',{attendance:'Nepateisintas neatvykimas'});
+const records=[row(1,'07:00','11:00'),row(1,'11:00','17:30',{id:12}),row(2,'07:00','15:30'),missing,row(4,'06:00','20:00',{team:2})];
+assert.equal(R.teamAverage(records,missing).value,9);assert.equal(R.teamAverage(records,missing).people,2);assert.equal(R.proposal(records,missing).actual,0);assert.equal(R.proposal(records,missing).value,-9);
+assert.equal(R.proposal([missing],missing).value,null);
+const adjusted=row(1,'06:00','18:00',{proposedHours:10});assert.equal(R.proposal([adjusted],adjusted).actual,11.5);assert.equal(R.proposal([adjusted],adjusted).delta,-1.5);
+assert.equal(R.conflicts([row(1,'07:00','11:00')],row(1,'11:00','17:00'),null).length,0);
+assert.equal(R.conflicts([row(1,'07:00','11:00')],row(1,'10:59','17:00'),null).length,1);
+assert.equal(R.conflicts([missing],row(3,'07:00','11:00'),null).length,1);
+assert.equal(R.conflicts([row(1,'07:00','11:00')],row(2,'07:00','11:00'),null).length,0);
+assert.throws(()=>R.calculate(row(1,'18:00','06:00')));
+console.log('Passed: actual hours, single daily lunch across objects, distinct coworker daily average, no-data case, separate adjustment, interval/absence conflicts.');
+
+const frozen={...missing,status:"Patvirtinta",approvedProposal:{value:-9,delta:-9,reference:{value:9,people:2}}};assert.equal(R.proposal([...records,row(8,"06:00","23:00")],frozen).value,-9);
