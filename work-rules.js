@@ -40,6 +40,7 @@
     for (const row of candidates) {
       if (!['Dirbo','Nepateisintas neatvykimas','Pateisintas neatvykimas'].includes(row.attendance)) throw Error(`Darbuotojas #${row.employee}: pažymėkite dalyvavimą.`);
       const c = calculate(row);
+      if(requireComments&&row.attendance==='Dirbo'&&row.resultConfirmed===false)throw Error(`Darbuotojas #${row.employee}: patvirtinkite atlikto darbo valandas.`);
       if (row.proposedHours !== null && row.proposedHours !== undefined && row.proposedHours !== '' && (!Number.isFinite(Number(row.proposedHours)) || Number(row.proposedHours) < 0 || Number(row.proposedHours) > 24)) throw Error(`Darbuotojas #${row.employee}: atlikto darbo valandos turi būti nuo 0 iki 24.`);
       if (requireComments && row.attendance === 'Pateisintas neatvykimas' && !row.absenceReason) throw Error(`Darbuotojas #${row.employee}: pasirinkite pateisinto neatvykimo priežastį.`);
       if (requireComments && row.attendance === 'Dirbo' && row.proposedHours != null && Number(row.proposedHours) !== c.actual && !(row.comment||'').trim()) throw Error(`Darbuotojas #${row.employee}: paaiškinkite dirbtų ir atlikto darbo valandų skirtumą.`);

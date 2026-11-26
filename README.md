@@ -39,3 +39,15 @@ PWA naudoja santykinius kelius, turi savo piktogramą ir atskirą langą. Paleid
 Skaičiavimai atskirti `work-rules.js`: faktinis intervalas, pietūs, komandos dienos vidurkis, siūlymas ir persidengimų kontrolė. Reikalavimų apimtis ir atviri klausimai – `REIKALAVIMAI.md`.
 
 Dienos rezultato pavyzdys: intervalas 07:00–18:30 ir 30 min. pietūs = 11 dirbtų valandų; vadovas darbuotojui įrašo 8 atlikto darbo valandas ir skirtumo komentarą. Tikrasis intervalas ir 11 val. nesikeičia.
+
+## Supaprastinta darbų vadovo darbo vieta
+
+- Darbų vadovas pradeda nuo „Mano diena“: mato visą savo komandą ir jos dienos įrašus visuose jam priskirtuose objektuose. Pildymas vyksta pagrindiniame ekrane.
+- Vadovo meniu: „Mano diena“, „Mano objektai“, „Suvestinės“, „Taisymo prašymai“. Administracijai paliktas išsamus meniu.
+- Darbuotojo eilutėje rodomas dalyvavimas, dirbtos ir atlikto darbo valandos. Laikas, pietūs, komentaras ir visi dienos intervalai išskleidžiami per „Detalės“.
+- Naujos dienos žmonių dalyvavimas iš pradžių nepažymėtas. „Visi dirbo“ užpildo nepažymėtus žmones, išsaugodamas jau pažymėtus neatvykimus.
+- „Atlikta = dirbta“ patvirtina likusius neįvertintus rezultatus; anksčiau įvestos išimtys išlieka. Aiškiai pažymėjus žmones, bendri veiksmai taikomi pažymėtiems.
+- Bendras laikas ir automobilis taikomi pažymėtiems intervalams arba visiems dirbantiems. Jau įvesto intervalo objektas keičiamas per perkėlimą, išlaikant vadovą ir komandą.
+- Pažymėjus darbuotojus, atsiranda „Keisti objektą“. Perkėlimo diena ir pradinis objektas užpildyti; pasirenkamas laikas ir tikslinis objektas.
+- Nuolat matomi išsaugojimo ir pateikimo mygtukai bei trūkstamų dalyvavimo / rezultato įvertinimų skaičius. Dienos negalima pateikti, kol nepatvirtintas dirbusių žmonių rezultatas.
+- Neišsaugoti pakeitimai išlieka naviguojant tarp ekranų toje pačioje atvertoje sesijoje. Patvariam saugojimui naršyklėje reikia paspausti „Išsaugoti“.

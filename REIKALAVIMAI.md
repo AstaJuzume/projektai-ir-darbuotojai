@@ -39,3 +39,13 @@ Darbų etapai, procentinė pažanga, kiekiai, GPS, kilometrai ir kelionės laiko
 6. Būsto ir kitų išlaidų dokumentai ir paskirstymas keliems objektams.
 
 Pageidaujama pradžia – apie 2027-01-10; terminas tikslinamas pagal galutinę apimtį.
+
+## Darbų vadovo supaprastinimas
+
+Pagrindinis ekranas – „Mano diena“, visame puslapyje rodantis savo komandos įrašus visuose leidžiamuose dienos objektuose. Vadovo meniu sudaro tik „Mano diena“, „Mano objektai“, „Suvestinės“ ir „Taisymo prašymai“.
+
+Dalyvavimas ir rezultatas įvedami kompaktiškose eilutėse. Laikas, pietūs, automobilis ir komentarai prieinami per bendrus nustatymus arba darbuotojo detales. Bendrus pakeitimus galima taikyti pažymėtiems žmonėms. Išsaugojimo / pateikimo juosta nuolat pasiekiama; rodoma, kiek trūksta dalyvavimo ar rezultato įvertinimų.
+
+„Visi dirbo“ išlaiko jau pažymėtus neatvykimus. „Atlikta = dirbta“ išlaiko jau įvestus individualius įvertinimus ir užpildo likusius. Dienos pateikimas neleidžiamas, kol dirbusių žmonių rezultatas nepatvirtintas. Pravaikštos korekcijos lieka atskiros nuo darbo rezultato.
+
+Perkėlimo veiksmas pradedamas pažymėjus žmones jų dienos sąraše. Dienos ir pradinio objekto iš naujo rinktis nereikia. Vadovas, komanda, dienos sumos ir vienkartiniai pietūs išlieka. Administracijai išlaikomas išsamus valdymas.

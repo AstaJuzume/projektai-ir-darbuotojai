@@ -4,7 +4,7 @@ const base=existsSync('dist/app.js')?'dist/':'';
 let exported;
 const ctx={localStorage:{getItem:()=>null},document:{addEventListener(){},createElement:()=>({click(){}})},console,Blob,URL:{createObjectURL(blob){exported=blob;return 'blob:demo'},revokeObjectURL(){}},setTimeout(){}};
 vm.createContext(ctx);
-for(const file of ['work-rules.js','workflow.js','day-sheet.js','app.js'])vm.runInContext(readFileSync(base+file,'utf8').replace(/\nrender\(\);\s*$/,''),ctx);
+for(const file of ['work-rules.js','workflow.js','day-sheet.js','my-day.js','app.js'])vm.runInContext(readFileSync(base+file,'utf8').replace(/\nrender\(\);\s*$/,''),ctx);
 const run=code=>vm.runInContext(code,ctx);
 run(`
  db.projects[0].name='OWN_OBJECT';db.projects[0].managers=[1,6];
@@ -18,10 +18,11 @@ run(`
  db.entries.push({...sample,id:10003,employee:6,team:2,comment:'OTHER_TEAM_SAME_AUTHOR'});
  toast=()=>{};
 `);
+assert.deepEqual(Array.from(run('nav().map(r=>r[0])')),['myday','projects','reports','requests']);
 assert.deepEqual(Array.from(run('visibleProjects().map(p=>p.id)')),[1]);
 assert.ok(run("visibleRows().some(r=>r.comment==='OWN_TEAM_OTHER_AUTHOR')"),'Visibility follows team, not author');
 assert.ok(!run("visibleRows().some(r=>r.comment==='OWN_TEAM_HIDDEN_OBJECT'||r.comment==='OTHER_TEAM_SAME_AUTHOR')"));
-for(const expression of ['overview()','projectsView()','projectView()','timeView()','reportsView()','employeesView()','dayReviewView()','filterBar()','projectOptions(1)']){
+for(const expression of ['overview()','projectsView()','projectView()','timeView()','reportsView()','employeesView()','dayReviewView()','filterBar()','projectOptions(1)','myDayView()']){
  const html=run(expression);
  for(const hidden of ['HIDDEN_OBJECT','HIDDEN_EMPTY_OBJECT','HIDDEN_WORKER','HIDDEN_TEAM_HOURS','OWN_TEAM_HIDDEN_OBJECT','OTHER_TEAM_SAME_AUTHOR'])assert.ok(!html.includes(hidden),`${expression} leaked ${hidden}`);
 }
