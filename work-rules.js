@@ -81,7 +81,7 @@
       const row=matches[0];
       if(row.status!=='Juodraštis'||(!settings.corrector&&row.author!==settings.actor))throw Error('Perkelti galima tik savo neperduoto juodraščio darbuotojus.');
       const before={...row,end:settings.at,status:'Juodraštis',approvedProposal:null};
-      const after={...row,id:undefined,start:settings.at,project:settings.targetProject,author:settings.targetAuthor,team:settings.targetTeam,vehicle:settings.vehicle===undefined?row.vehicle:settings.vehicle,driver:settings.driver===undefined?row.driver:settings.driver,status:'Juodraštis',approvedProposal:null};
+      const after={...row,id:undefined,start:settings.at,project:settings.targetProject,status:'Juodraštis',approvedProposal:null};
       const total=calculate(row).actual,first=calculate(before).actual;
       if(row.proposedHours!=null&&total>0){before.proposedHours=round(Number(row.proposedHours)*first/total);after.proposedHours=round(Number(row.proposedHours)-before.proposedHours);}
       changes.push(before,after);

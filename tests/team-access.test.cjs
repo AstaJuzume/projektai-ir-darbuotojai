@@ -40,7 +40,9 @@ for(const call of ['openDaySheet()','openTransfer()']){
  const html=run('modalBody');
  for(const hidden of ['HIDDEN_OBJECT','HIDDEN_EMPTY_OBJECT','HIDDEN_WORKER'])assert.ok(!html.includes(hidden),`${call} leaked ${hidden}`);
 }
-// A transferred worker appears in the receiving team's list only through that team's own interval.
+assert.ok(!run('modalBody').includes('targetAuthor'));
+assert.ok(!run('modalBody').includes('name="vehicle"'));
+// A temporarily assigned worker exposes only the current team's own interval.
 run('db.entries.push({...db.entries[0],id:10004,employee:6,team:1,project:1,author:1})');
 assert.ok(run('canSeeEmployee(6)'));
 assert.ok(!run('visibleRows().some(r=>r.employee===6&&r.team===2)'));
@@ -48,6 +50,16 @@ async function checkExport(){
  run("exportCSV('all')");const csv=await exported.text();
  assert.ok(csv.includes('OWN_TEAM_OTHER_AUTHOR'));
  for(const hidden of ['HIDDEN_OBJECT','HIDDEN_TEAM_HOURS','OWN_TEAM_HIDDEN_OBJECT','OTHER_TEAM_SAME_AUTHOR'])assert.ok(!csv.includes(hidden),`CSV leaked ${hidden}`);
+ run(`
+  db.projects[1].managers.push(1);
+  const originals=[1,2].map(employee=>({...db.entries[0],id:20000+employee,employee,date:'2026-11-26',start:'07:00',end:'18:30',author:1,team:1,project:1,status:'Juodraštis'}));
+  const moved=R.transfer(originals,[1,2],{date:'2026-11-26',at:'13:00',sourceProject:1,targetProject:2,actor:1});
+  for(const row of moved){row.id=nextId(db.entries);db.entries.push(row);}
+ `);
+ assert.equal(run("visibleRows().filter(r=>r.date==='2026-11-26').length"),4,'The same leader keeps both objects’ intervals');
+ assert.equal(run("R.daySummary(visibleRows(),1,'2026-11-26').actual"),11);
+ run('state.user=6');
+ assert.equal(run("visibleRows().filter(r=>r.date==='2026-11-26').length"),0,'The other leader cannot see a visiting team’s hours');
  for(const id of [1001,1002,1003]){
   run('state.user='+id);
   assert.equal(run('visibleProjects().length'),3);

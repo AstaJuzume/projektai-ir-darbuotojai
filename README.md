@@ -13,7 +13,7 @@ Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apska
 
 ## Dienos pildymo patobulinimai
 
-- „Perkelti darbuotojus“ padalija pasirinktų darbuotojų juodraščio intervalą nuo nurodyto laiko į kitą objektą. Galima parinkti priimantį darbų vadovą ir automobilį. Dienos faktinių bei įvertintų valandų suma ir vienkartinė pietų pertrauka išlieka; persidengimai blokuojami.
+- „Perkelti darbuotojus“ padalija pasirinktų darbuotojų juodraščio intervalą nuo nurodyto laiko į kitą objektą. Darbuotojai, jų valandos, komanda, automobilis ir vairuotojas lieka prie to paties darbų vadovo; keičiasi tik objektas. Dienos faktinių bei įvertintų valandų suma ir vienkartinė pietų pertrauka išlieka; persidengimai blokuojami.
 - „Dienos suvestinė“ sujungia žmogaus dienos objektus. Administracija mato visus įrašus, darbų vadovas – savo komandos valandas priskirtuose objektuose. Darbuotojo ataskaitoje išskleidžiami dienos intervalai ir objektai.
 - Atlikto darbo valandos ir pravaikštos korekcija rodomos atskirai lentelėse, suvestinėse ir CSV. Neatvykusio žmogaus faktas ir atliktas darbas yra 0; neigiamas siūlymas lieka atskirame lauke.
 - „Dienos kontrolė“ administracijai atskiria nepažymėtus darbuotojus, pateisintus bei nepateisintus neatvykimus, juodraščius ir pateiktas komandas.

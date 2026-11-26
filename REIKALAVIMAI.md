@@ -18,7 +18,7 @@ Individualiai programuojama sistema pakeičia Excel ir nuotraukomis siunčiamas 
 
 ## Įgyvendinti dienos darbo patogumai
 
-1. Kelių pažymėtų darbuotojų perkėlimas nuo pasirinkto laiko į kitą objektą ir, prireikus, kitam darbų vadovui. Perkeliami tik leistini juodraščiai; intervalai padalijami, pietūs ir dienos sumos nedubliuojami.
+1. Kelių pažymėtų darbuotojų perkėlimas nuo pasirinkto laiko į kitą objektą, išlaikant tą patį darbų vadovą, komandą ir transportą. Darbuotojai ir jų valandos kitam vadovui neperduodami. Perkeliami tik leistini juodraščiai; intervalai padalijami, pietūs ir dienos sumos nedubliuojami.
 2. Bendra darbuotojo diena su kelių objektų intervalais, faktinėmis ir atlikto darbo valandomis. Darbų vadovui galioja priskirtų objektų ir savo komandos įrašų matomumo riba.
 3. Pravaikštos neigiamas siūlymas atskirtas nuo atlikto darbo įvertinimo, taip pat eksporte. Faktinės valandos dėl siūlymo nesikeičia.
 4. Administracijos dienos užpildymo kontrolė: nepažymėti žmonės, neatvykimų rūšys, juodraščiai ir pateiktos komandos.
