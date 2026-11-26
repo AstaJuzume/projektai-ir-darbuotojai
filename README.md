@@ -1,5 +1,7 @@
 # Projektai ir darbuotojai
 
+PVMOUNT individualios programėlės vizualas pritaikytas pagal oficialų logotipą ir svetainės spalvas: tamsi navigacija, mėlyni akcentai ir mobilios darbuotojų kortelės. Prekės ženklo bei šriftų šaltiniai – `BRANDING.md`. Microsoft / Power Apps sąsajos antraštė nenaudojama.
+
 Individualiai programuojamos darbo laiko, objektų, komandų ir transporto apskaitos sistemos PWA prototipas. Vardai, įrašai ir automobiliai demonstraciniai.
 
 ## Procesas

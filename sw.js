@@ -1,6 +1,6 @@
 'use strict';
 const CACHE_PREFIX = 'solar-projects-pwa-' + encodeURIComponent(new URL(self.registration.scope).pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + 'v1';
+const CACHE_NAME = CACHE_PREFIX + 'v2';
 const OFFLINE_URL = new URL('offline.html', self.registration.scope).href;
 
 self.addEventListener('install', event => {

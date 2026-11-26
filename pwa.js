@@ -49,8 +49,8 @@
     overlay.className = 'pwa-overlay';
     overlay.innerHTML = `<section class="pwa-dialog" role="dialog" aria-modal="true" aria-labelledby="pwa-title">
       <button class="pwa-close" type="button" data-pwa-close aria-label="Uždaryti įdiegimo instrukciją">×</button>
-      <img class="pwa-icon" src="icons/icon-192.png" width="64" height="64" alt="">
-      <div class="eyebrow">PROJEKTAI IR DARBUOTOJAI</div>
+      <img class="pwa-icon" src="assets/pvmount-logo.png" width="64" height="64" alt="">
+      <div class="eyebrow">PVMOUNT · KOMANDŲ VALDYMAS</div>
       <h2 id="pwa-title">Išsisaugokite kaip programėlę</h2>
       <p>Turėsite savo piktogramą ir galėsite atidaryti sistemą atskirame lange.</p>
       <div class="pwa-instructions">
